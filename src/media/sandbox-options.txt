@@ -1,0 +1,11 @@
+VERSION = 1,
+
+option TrappingSurvival.Multiplier
+{
+    type = double,
+    min = 0.1,
+    default = 1.0,
+    max = 2.0,
+    page = TrappingSurvival,
+    translation = TrappingSurvival_Multiplier,
+}

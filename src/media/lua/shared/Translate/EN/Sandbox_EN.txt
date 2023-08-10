@@ -1,0 +1,5 @@
+Sandbox_EN = {
+	Sandbox_TrappingSurvival = "Trapping Survival",
+
+	Sandbox_TrappingSurvival_Multiplier = "Multiplier bait",
+}
