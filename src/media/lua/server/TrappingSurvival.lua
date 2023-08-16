@@ -4,6 +4,7 @@
 ----- DateTime: 09/08/23 10:17
 -----
 --
+
 --Animals = {}
 --
 --local function init()
@@ -14,6 +15,8 @@
 --    --table.insert(Animals, getSquirrel())
 --end
 --
+--init()
+
 --local function OnGameStart()
 --    init()
 --end

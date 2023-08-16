@@ -3,3 +3,83 @@
 --- Created by lele.
 --- DateTime: 13/08/23 11:15
 ---
+
+
+-- sudo apt-get install luarocks
+-- sudo luarocks install luafilesystem
+local lfs = require("lfs")
+
+-- Funzione per copiare una cartella ricorsivamente
+local function copyFolder(src, dest)
+    lfs.mkdir(dest)
+
+    for entry in lfs.dir(src) do
+        if entry ~= "." and entry ~= ".." then
+            --[[
+                Supponiamo che src sia la stringa "directory"
+                e entry sia la stringa "file.lua".
+
+                srcPath =  con il valore "directory/file.lua"
+            ]]
+
+            local srcPath = src .. "/" .. entry
+            local destPath = dest .. "/" .. entry
+
+            local attributes = lfs.attributes(srcPath)
+            if attributes.mode == "directory" then
+                -- Se è una directory, copiala ricorsivamente
+                copyFolder(srcPath, destPath)
+            else
+                -- Se è un file, copialo nella destinazione
+                local file = io.open(srcPath, "r")
+                local content = file:read("*all")
+                file:close()
+
+                file = io.open(destPath, "w")
+                file:write(content)
+                file:close()
+            end
+        end
+    end
+end
+
+local sourceFolder
+local destinationFolder
+
+-- Esempio di utilizzo:
+sourceFolder = "/home/Archivio/Archivio/PZSaves/mio/GabbieVanillaSource"
+destinationFolder = "/home/lele/Zomboid/Saves/Apocalypse/GabbieVanilla"
+-- copyFolder(sourceFolder, destinationFolder)
+--
+---- reverse
+--copyFolder(destinationFolder, sourceFolder )
+
+-- ------------------------------------------------------------------------
+
+sourceFolder = "/home/Archivio/Archivio/PZSaves/mio/GabbieHardTrapSource"
+destinationFolder = "/home/lele/Zomboid/Saves/Apocalypse/GabbieHardTrap"
+--copyFolder(sourceFolder, destinationFolder)
+
+-- reverse
+--copyFolder(destinationFolder, sourceFolder )
+
+-- -------------------------TrappingSurvival--------------------------------
+
+sourceFolder = "/home/Archivio/Archivio/PZSaves/mio/TrappingSurvivalSource"
+destinationFolder = "/home/lele/Zomboid/Saves/Sandbox/TrappingSurvival"
+
+copyFolder(sourceFolder, destinationFolder)
+
+-- reverse
+--copyFolder(destinationFolder, sourceFolder )
+
+-- -------------------------TrappingSurvivalX-------------------------------
+
+sourceFolder = "/home/Archivio/Archivio/PZSaves/mio/TrappingSurvivalXSource"
+destinationFolder = "/home/lele/Zomboid/Saves/Sandbox/TrappingSurvivalX"
+
+copyFolder(sourceFolder, destinationFolder)
+
+-- reverse
+--copyFolder(destinationFolder, sourceFolder )
+

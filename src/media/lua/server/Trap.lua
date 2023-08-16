@@ -6,9 +6,6 @@
 
 ---@class Trap
 
---local trapping = require("server/TrappingDB")
---local trapping = require("TrappingDB")
-
 local Trap = {}
 
 local trapBox

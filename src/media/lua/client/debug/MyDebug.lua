@@ -11,7 +11,8 @@ local trapping = require("Contenitore.TrappingDB") --
 local function key34(character, key)
     if key == 34 then -- <<<< g
         print("Key = g > Sandbox \n")
-        print(SandboxVars.TrapCage.Multiplier)
+        local multiplier = SandboxVars.TrappingSurvival.Multiplier
+        print(multiplier)
     end
 end
 
@@ -26,23 +27,8 @@ end
 ---@param character IsoGameCharacter
 local function key36(character, key)
     if key == 36 then -- <<<< j
-        print("Key = j > BAIT \n")
+        print("Key = j >  \n")
 
-        local baitX = {}
-        --- **Enum Bait**
-        baitX.bait = {
-            APPLE = trapping.bait.APPLE,
-            BANANA = trapping.bait.BANANA,
-            BELL_PEPPER = trapping.bait.BELL_PEPPER,
-            CABBAGE = trapping.bait.CABBAGE,
-            CARROTS = trapping.bait.CARROTS,
-            CORN = trapping.bait.CORN,
-            LETTUCE = trapping.bait.LETTUCE,
-            PEACH = trapping.bait.PEACH,
-            POTATO = trapping.bait.POTATO,
-            TOMATO = trapping.bait.TOMATO,
-        }
-        print(baitX.bait.APPLE)
     end
 end
 

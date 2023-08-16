@@ -166,14 +166,9 @@ local function initZone()
 end
 
 function init()
-    local multiplier = 0.5 -- SandboxVars.TrappingSurvival.Multiplier
+    local multiplier = SandboxVars.TrappingSurvival.Multiplier
     rabbit = creatureFactory.creature(type, strength, item, maxSize, minSize, minHour, maxHour)
 
-    local dgb
-
-    print("------------------------------------------------------")
-    print(bait.getPotato())
-    print("------------------------------------------------------")
     --                  ** MULTIPLIER **
     setBaitMultiplier(multiplier)
     setTrapMultiplier(multiplier)
@@ -183,6 +178,7 @@ function init()
     initBait()
     initTrap()
     initZone()
+
     table.insert(Animals, rabbit)
 end
 
