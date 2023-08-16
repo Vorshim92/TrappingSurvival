@@ -6,9 +6,6 @@
 
 
 ---@class Zone
---local trapping = require("server/TrappingDB")
---local trapping = require("TrappingDB")
-
 local Zone = {}
 
 local deepForest
@@ -25,7 +22,7 @@ Zone.zone = {
     TOWN_ZONE = "TownZone",
     TRAILER_PARK = "TrailerPark",
     VEGETATION = "Vegitation", -- <<< "Vegitation" it's not my error!!!
-    FARM_LAND = "FarmLand"
+    FARM_LAND = "FarmLand",
 }
 
 --- **Set Deep Forest**

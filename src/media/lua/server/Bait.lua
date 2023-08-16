@@ -4,7 +4,7 @@
 --- DateTime: 03/08/23 09:04
 ---
 
----@class Bait
+ ---@class Bait
 
 --local trapping = require("server/TrappingDB")
 --local trapping = require("TrappingDB")
@@ -55,6 +55,7 @@ Bait.bait = {
     GRASSHOPPER = "Base.Grasshopper",
     LETTUCE = "Base.Lettuce",
     ORANGE = "Base.Orange",
+    PEACH = "Base.Peach",
     PEANUT_BUTTER = "Base.PeanutButter",
     PEANUTS = "Base.Peanuts",
     PROCESSED_CHEESE = "Base.Processedcheese",
@@ -356,7 +357,7 @@ end
 --- **Set Peach**
 ---@param peach_ int
 function Bait.setPeach(peach_)
-    if peach < 0 then
+    if peach_ < 0 then
         print("ERROR : PEACH " .. tostring(peach_))
         return
     end
