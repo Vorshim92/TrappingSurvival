@@ -4,32 +4,15 @@
 --- DateTime: 13/08/23 23:14
 ---
 
+-- https://pzwiki.net/wiki/Trapping
+-- SteamLibrary/steamapps/common/ProjectZomboid/projectzomboid/media/lua/server/Traps/TrapDefinition.lua
+
+---@class Rabbit
+
 --- ---------------------- Start Rabbit Default values -------------------------------
 
--- SteamLibrary/steamapps/common/ProjectZomboid/projectzomboid/media/lua/server/Traps/RabbitX04.lua
-
---local bait = require("server/Bait")
---local trap = require("server/Trap")
---local zone = require("server/Zone")
-
---local rabbit = require("media.lua.server.Creature")
 local creatureFactory = require("CreatureFactory")
 local rabbit = {}
-Animals = {};
-
------------------------------------------
---Traps = {}
---local cageTrap = {};
---cageTrap.type = "Base.TrapCage";
---cageTrap.sprite = "constructedobjects_01_8";
---cageTrap.northSprite = "constructedobjects_01_11";
---cageTrap.closedSprite = "constructedobjects_01_9";
---cageTrap.northClosedSprite = "constructedobjects_01_10";
---cageTrap.trapStrength = 100;
---cageTrap.destroyItem = { "Base.Wire", "Base.MetalPipe", "Base.MetalPipe", "Base.MetalPipe", "Base.SheetMetal", "Base.SheetMetal" };
---table.insert(Traps, cageTrap);
-
---------------------------------
 
 local trap = require("Trap")
 local bait = require("Bait")
@@ -71,19 +54,18 @@ local strength = 24
 local item = "Base.DeadRabbit"
 
 -- hour this animal will be out and when you can catch it
-local minHour = 5 -- 18
-local maxHour = 15 -- 8
+local minHour = 18
+local maxHour = 8
 
 -- min and max "size" (understand hunger reduction) of the animal
 local minSize = 30
 local maxSize = 100
 
+--- ---------------------- Set Multiplier -------------------
 
 --- **Set Bait Multiplier**
 ---@param multiplier int
 local function setBaitMultiplier(multiplier)
-    --bait.setPotato(potato * multiplier)
-
     bait.setApple(apple * multiplier)
     bait.setBanana(banana * multiplier)
     bait.setBellPepper(bellPepper * multiplier)
@@ -99,8 +81,6 @@ end
 --- **Set Trap Multiplier**
 ---@param multiplier int
 local function setTrapMultiplier(multiplier)
-    --trap.setTrapCage(trapCage * multiplier)
-
     trap.setTrapBox(trapBox * multiplier)
     trap.setTrapCage(trapCage * multiplier)
     trap.setTrapCrate(trapCrate * multiplier)
@@ -110,8 +90,6 @@ end
 --- **Set Zone Multiplier**
 ---@param multiplier int
 local function setZoneMultiplier(multiplier)
-    --zone.setDeepForest( deepForest * multiplier)
-
     zone.setDeepForest( deepForest * multiplier)
     zone.setForest(forest * multiplier)
     zone.setTownZone(townZone * multiplier)
@@ -128,10 +106,9 @@ local function setSizeAnimalMultiplier(multiplier)
 end
 
 --- ---------------------- Start init Bait -------------------
+
 --- **Init Bait**
 local function initBait()
---    creatureFactory.createBait(rabbit, bait.bait.POTATO, bait.getPotato())
-
     creatureFactory.createBait(rabbit, bait.bait.APPLE, bait.getApple())
     creatureFactory.createBait(rabbit, bait.bait.BANANA, bait.getBanana())
     creatureFactory.createBait(rabbit, bait.bait.BELL_PEPPER, bait.getBellPepper())
@@ -146,8 +123,6 @@ end
 
 --- **Init Trap**
 local function initTrap()
-    -- creatureFactory.createTrap(rabbit, trap.trap.CAGE, trap.getTrapCage())
-
     creatureFactory.createTrap(rabbit, trap.trap.BOX, trap.getTrapBox())
     creatureFactory.createTrap(rabbit, trap.trap.CAGE, trap.getTrapCage())
     creatureFactory.createTrap(rabbit, trap.trap.CRATE, trap.getTrapCrate())
@@ -156,8 +131,6 @@ end
 
 --- **Init Zone**
 local function initZone()
---    creatureFactory.createZone(rabbit, zone.zone.DEEP_FOREST, zone.getDeepForest())
-
     creatureFactory.createZone(rabbit, zone.zone.DEEP_FOREST, zone.getDeepForest())
     creatureFactory.createZone(rabbit, zone.zone.FOREST, zone.getForest())
     creatureFactory.createZone(rabbit, zone.zone.TOWN_ZONE, zone.getTownZone())
@@ -165,21 +138,26 @@ local function initZone()
     creatureFactory.createZone(rabbit, zone.zone.VEGETATION, zone.getVegetation())
 end
 
-function init()
-    local multiplier = SandboxVars.TrappingSurvival.Multiplier
+--- **Init**
+local function init()
+    local multiplier = SandboxVars.TrappingSurvival.Rabbit
     rabbit = creatureFactory.creature(type, strength, item, maxSize, minSize, minHour, maxHour)
 
     --                  ** MULTIPLIER **
     setBaitMultiplier(multiplier)
     setTrapMultiplier(multiplier)
     setZoneMultiplier(multiplier)
-    setSizeAnimalMultiplier(multiplier)
+    -- setSizeAnimalMultiplier(multiplier)
 
+    --                  ** Init bait/trap/zone **
     initBait()
     initTrap()
     initZone()
-
-    table.insert(Animals, rabbit)
 end
 
-init()
+---**Get Rabbit**
+---@return table Rabbit
+function getRabbit()
+    init()
+    return rabbit
+end

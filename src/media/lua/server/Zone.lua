@@ -4,8 +4,11 @@
 --- DateTime: 03/08/23 11:31
 ---
 
+-- https://pzwiki.net/wiki/Trapping
+-- SteamLibrary/steamapps/common/ProjectZomboid/projectzomboid/media/lua/server/Traps/TrapDefinition.lua
 
 ---@class Zone
+
 local Zone = {}
 
 local deepForest

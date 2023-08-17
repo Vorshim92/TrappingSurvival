@@ -4,15 +4,23 @@
 --- DateTime: 26/04/23 17:41
 ---
 
- --local trapping = require("lua/server/TrappingDB")
-local trapping = require("Contenitore.TrappingDB") --
 
 ---@param character IsoGameCharacter
 local function key34(character, key)
     if key == 34 then -- <<<< g
-        print("Key = g > Sandbox \n")
-        local multiplier = SandboxVars.TrappingSurvival.Multiplier
-        print(multiplier)
+        print("Key = g > RabbitX2 \n")
+
+        print("Bird")
+        print(SandboxVars.TrappingSurvival.Bird)  -- SandboxVars.TrappingSurvival.Bird
+        print("Mouse")
+        print(SandboxVars.TrappingSurvival.Mouse)  -- SandboxVars.TrappingSurvival.Mouse
+        print("Rabbit")
+        print(SandboxVars.TrappingSurvival.Rabbit)  -- SandboxVars.TrappingSurvival.Rabbit
+        print("Rat")
+        print(SandboxVars.TrappingSurvival.Rat)  -- SandboxVars.TrappingSurvival.Rat
+        print("Squirrel")
+        print(SandboxVars.TrappingSurvival.Squirrel)  -- SandboxVars.TrappingSurvival.Squirrel
+        print("-------------------------")
     end
 end
 
@@ -75,7 +83,8 @@ local function onCustomUIKeyPressed(key)
     key37(character, key)
 end
 
--- ------------------------------------------------------------
+--
+----- ------------------------------------------------------------
 -- ------------------------------------------------------------
 
 local function OnGameStart()
@@ -83,4 +92,4 @@ local function OnGameStart()
 end
 
 -- Events.OnGameStart.Add(OnGameStart)
-Events.OnCustomUIKeyPressed.Add(onCustomUIKeyPressed)
+-- Events.OnCustomUIKeyPressed.Add(onCustomUIKeyPressed)

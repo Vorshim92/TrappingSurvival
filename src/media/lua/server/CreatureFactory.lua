@@ -4,7 +4,10 @@
 --- DateTime: 13/08/23 12:07
 ---
 
--- SteamLibrary/steamapps/common/ProjectZomboid/projectzomboid/media/lua/server/Traps/RabbitX04.lua
+-- https://pzwiki.net/wiki/Trapping
+-- SteamLibrary/steamapps/common/ProjectZomboid/projectzomboid/media/lua/server/Traps/TrapDefinition.lua
+
+---@class CreatureFactory
 
 local CreatureFactory = {}
 
@@ -12,7 +15,7 @@ function CreatureFactory.creature(animal, strength, item, minSize, maxSize, minH
     local creature = {}
     creature.baits = {}
     creature.traps = {}
-    creature.zone = {} -- << !!!!!!!!!!!!!!!!!! It's a table, it would need an 's' !!!!!!!!!!!!!!!
+    creature.zone = {} -- << !!!!!!!!!!!!!!!!!! It's a  table, it would need an 's' !!!!!!!!!!!!!!!
     creature.type = animal
     creature.strength = strength
     creature.item = item
@@ -26,24 +29,27 @@ end
 --- ---------------------- Start table bait/trap/zone -------------
 
 --- **Create Bait**
+---@param creature_ table -- baits
 ---@param baitEnum Enum
----@param bait_ string
-function CreatureFactory.createBait(creature_, baitEnum, bait_)
-    creature_.baits[baitEnum] = bait_
+---@param bait string
+function CreatureFactory.createBait(creature_, baitEnum, bait)
+    creature_.baits[baitEnum] = bait
 end
 
 --- **Create Trap**
+---@param creature_ table -- traps
 ---@param trapEnum Enum
----@param trap_ string
-function CreatureFactory.createTrap(creature_, trapEnum, trap_)
-    creature_.traps[trapEnum] = trap_
+---@param trap string
+function CreatureFactory.createTrap(creature_, trapEnum, trap)
+    creature_.traps[trapEnum] = trap
 end
 
 --- **Create Zone**
+---@param creature_ table -- zone
 ---@param zoneEnum Enum
----@param zone_ string
-function CreatureFactory.createZone(creature_, zoneEnum, zone_)
-    creature_.zone[zoneEnum] = zone_
+---@param zone string
+function CreatureFactory.createZone(creature_, zoneEnum, zone)
+    creature_.zone[zoneEnum] = zone
 end
 
 return CreatureFactory

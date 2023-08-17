@@ -1,11 +1,56 @@
 VERSION = 1,
 
-option TrappingSurvival.Multiplier
+option TrappingSurvival.Bird
 {
-    type = double,
-    min = 0.1,
-    default = 1.0,
-    max = 2.0,
-    page = TrappingSurvival,
-    translation = TrappingSurvival_Multiplier,
+	type = double,
+	min = 0,
+	max = 2,
+	default = 1,
+
+	page = TrappingSurvival,
+	translation = TrappingSurvival_Bird,
+}
+
+option TrappingSurvival.Mouse
+{
+	type = double,
+	min = 0,
+	max = 2,
+	default = 1,
+
+	page = TrappingSurvival,
+	translation = TrappingSurvival_Mouse,
+}
+
+option TrappingSurvival.Rabbit
+{
+	type = double,
+	min = 0,
+	max = 2,
+	default = 1,
+
+	page = TrappingSurvival,
+	translation = TrappingSurvival_Rabbit,
+}
+
+option TrappingSurvival.Rat
+{
+	type = double,
+	min = 0,
+	max = 2,
+	default = 1,
+
+	page = TrappingSurvival,
+	translation = TrappingSurvival_Rat,
+}
+
+option TrappingSurvival.Squirrel
+{
+	type = double,
+	min = 0,
+	max = 2,
+	default = 1,
+
+	page = TrappingSurvival,
+	translation = TrappingSurvival_Squirrel,
 }

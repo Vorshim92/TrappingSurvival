@@ -5,20 +5,16 @@
 -----
 --
 
---Animals = {}
---
---local function init()
---    --table.insert(Animals, getBird())
---    --table.insert(Animals, getMouse())
---    table.insert(Animals, getRabbit())
---    --table.insert(Animals, getRat())
---    --table.insert(Animals, getSquirrel())
---end
---
---init()
+---@class TrappingSurvival
 
---local function OnGameStart()
---    init()
---end
---
---Events.OnGameStart.Add(OnGameStart)
+Animals = {}
+
+local function init()
+    table.insert(Animals, getBird())
+    table.insert(Animals, getMouse())
+    table.insert(Animals, getRabbit())
+    table.insert(Animals, getRat())
+    table.insert(Animals, getSquirrel())
+end
+
+init()

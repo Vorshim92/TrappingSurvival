@@ -4,6 +4,9 @@
 --- DateTime: 03/08/23 12:23
 ---
 
+-- https://pzwiki.net/wiki/Trapping
+-- SteamLibrary/steamapps/common/ProjectZomboid/projectzomboid/media/lua/server/Traps/TrapDefinition.lua
+
 ---@class Trap
 
 local Trap = {}

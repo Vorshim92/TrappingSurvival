@@ -1,5 +1,18 @@
 Sandbox_EN = {
 	Sandbox_TrappingSurvival = "Trapping Survival",
 
-	Sandbox_TrappingSurvival_Multiplier = "Multiplier bait",
+    Sandbox_TrappingSurvival_Bird = "Possibility of Capture Bird",
+    Sandbox_TrappingSurvival_Bird_tooltip = "Lower values = lower chance of capture, higher values = higher chance of capture",
+
+    Sandbox_TrappingSurvival_Mouse = "Possibility of Capture Mouse",
+    Sandbox_TrappingSurvival_Mouse_tooltip = "Lower values = lower chance of capture, higher values = higher chance of capture",
+
+    Sandbox_TrappingSurvival_Rabbit = "Possibility of Capture Rabbit",
+    Sandbox_TrappingSurvival_Rabbit_tooltip = "Lower values = lower chance of capture, higher values = higher chance of capture",
+
+    Sandbox_TrappingSurvival_Rat = "Possibility of Capture Rat",
+    Sandbox_TrappingSurvival_Rat_tooltip = "Lower values = lower chance of capture, higher values = higher chance of capture",
+
+    Sandbox_TrappingSurvival_Squirrel = "Possibility of Capture Squirrel",
+    Sandbox_TrappingSurvival_Squirrel_tooltip = "Lower values = lower chance of capture, higher values = higher chance of capture",
 }

@@ -4,10 +4,11 @@
 --- DateTime: 03/08/23 09:04
 ---
 
+-- https://pzwiki.net/wiki/Trapping
+-- SteamLibrary/steamapps/common/ProjectZomboid/projectzomboid/media/lua/server/Traps/TrapDefinition.lua
+
  ---@class Bait
 
---local trapping = require("server/TrappingDB")
---local trapping = require("TrappingDB")
 local Bait = {}
 
 local apple
@@ -146,7 +147,7 @@ end
 
 --- **Get Bread Slice**
 ---@return int bread_slices
-function Bait.getBreadSlice()
+function Bait.getBreadSlices()
     return breadSlices
 end
 
