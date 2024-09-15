@@ -55,6 +55,10 @@ local maxHour = 0
 local minSize = 5
 local maxSize = 25
 
+-- min and max temperature of the animal
+local minTemp = -5
+local maxTemp = 30
+
 --- ---------------------- Start Set Multiplier -------------------
 
 --- **Set Bait Multiplier**
@@ -120,7 +124,7 @@ end
 --- **Init**
 local function init()
     local multiplier = SandboxVars.TrappingSurvival.Rat
-    rat = creatureFactory.creature(type, strength, item, maxSize, minSize, minHour, maxHour)
+    rat = creatureFactory.creature(type, strength, item, maxSize, minSize, minHour, maxHour, minTemp, maxTemp)
 
     --                  ** MULTIPLIER **
     setBaitMultiplier(multiplier)

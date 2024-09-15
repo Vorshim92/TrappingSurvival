@@ -58,6 +58,10 @@ local maxHour = 0
 local minSize = 2
 local maxSize = 32
 
+-- min and max temperature of the animal
+local minTemp = SandboxVars.TrappingSurvival.Bird_MinTemp
+local maxTemp = SandboxVars.TrappingSurvival.Bird_MaxTemp
+
 --- ---------------------- Set Multiplier -------------------
 
 --- **Set Bait Multiplier**
@@ -130,7 +134,7 @@ end
 --- **Init**
 local function init()
     local multiplier = SandboxVars.TrappingSurvival.Bird
-    bird = creatureFactory.creature(type, strength, item, maxSize, minSize, minHour, maxHour)
+    bird = creatureFactory.creature(type, strength, item, maxSize, minSize, minHour, maxHour, minTemp, maxTemp)
 
     --                  ** MULTIPLIER **
     setBaitMultiplier(multiplier)

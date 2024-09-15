@@ -54,3 +54,30 @@ option TrappingSurvival.Squirrel
 	page = TrappingSurvival,
 	translation = TrappingSurvival_Squirrel,
 }
+
+-- pagina Temperature -- 
+
+
+option TrappingSurvival.Bird_MinTemp
+{
+	type = double,
+	min = -100,
+	max = 100,
+	default = 0,
+
+	page = TrappingSurvival_Temperature,
+	translation = TrappingSurvival_Bird_MinTemp,
+}
+
+option TrappingSurvival.Bird_MaxTemp
+{
+	type = double,
+	min = -100,
+	max = 100,
+	default = 35,
+
+	page = TrappingSurvival_Temperature,
+	translation = TrappingSurvival_Bird_MaxTemp,
+}
+
+

@@ -15,4 +15,10 @@ Sandbox_EN = {
 
     Sandbox_TrappingSurvival_Squirrel = "Possibility of Capture Squirrel",
     Sandbox_TrappingSurvival_Squirrel_tooltip = "Lower values = lower chance of capture, higher values = higher chance of capture",
+
+    -- pagina Temperature --
+    Sandbox_TrappingSurvival_Temperature = "T. Survival Temperature",
+    Sandbox_TrappingSurvival_Temperature_tooltip = "Lower values = lower chance of capture, higher values = higher chance of capture",
+    Sandbox_TrappingSurvival_Bird_MinTemp = "Bird Minimum Temperature Resistance",
+    Sandbox_TrappingSurvival_Bird_MaxTemp = "Bird Maximum Temperature Resistance",
 }

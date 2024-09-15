@@ -24,7 +24,7 @@ Zone.zone = {
     FOREST = "Forest",
     TOWN_ZONE = "TownZone",
     TRAILER_PARK = "TrailerPark",
-    VEGETATION = "Vegitation", -- <<< "Vegitation" it's not my error!!!
+    VEGETATION = "Vegitation",
     FARM_LAND = "FarmLand",
 }
 

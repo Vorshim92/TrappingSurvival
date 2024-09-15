@@ -62,6 +62,10 @@ local maxHour = 8
 local minSize = 30
 local maxSize = 100
 
+-- min and max temperature of the animal
+local minTemp = -5
+local maxTemp = 25
+
 --- ---------------------- Set Multiplier -------------------
 
 --- **Set Bait Multiplier**
@@ -142,7 +146,7 @@ end
 --- **Init**
 local function init()
     local multiplier = SandboxVars.TrappingSurvival.Squirrel
-    squirrel = creatureFactory.creature(type, strength, item, maxSize, minSize, minHour, maxHour)
+    squirrel = creatureFactory.creature(type, strength, item, maxSize, minSize, minHour, maxHour, minTemp, maxTemp)
 
     --                  ** MULTIPLIER **
     setBaitMultiplier(multiplier)
