@@ -11,11 +11,11 @@
 
 local CreatureFactory = {}
 
-function CreatureFactory.creature(animal, strength, item, minSize, maxSize, minHour, maxHour)
+function CreatureFactory.creature(animal, strength, item, minSize, maxSize, minHour, maxHour, minTemp, maxTemp)
     local creature = {}
     creature.baits = {}
     creature.traps = {}
-    creature.zone = {} -- << !!!!!!!!!!!!!!!!!! It's a  table, it would need an 's' !!!!!!!!!!!!!!!
+    creature.zone = {}
     creature.type = animal
     creature.strength = strength
     creature.item = item
@@ -23,6 +23,8 @@ function CreatureFactory.creature(animal, strength, item, minSize, maxSize, minH
     creature.maxSize = maxSize
     creature.minHour = minHour
     creature.maxHour = maxHour
+    creature.minTemp = minTemp
+    creature.maxTemp = maxTemp
     return creature
 end
 
